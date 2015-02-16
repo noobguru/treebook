@@ -4,15 +4,18 @@
   <tr>
     <th>Author:</th>
     <th>Content:</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>crud</th>
+    <th>actions</th>
+    <th>here</th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.author %></td>
-    <td><%= post.content %></td>
+    <td>
+      <div id="test" onclick="myFunction()">
+     <%= post.content %></td> 
+     </div>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,3 +26,10 @@
 <br />
 
 <%= link_to 'New Post', new_post_path %>
+<script>
+ 
+function myFunction() {
+    document.getElementById("test").innerHTML = "itay was here";
+    
+}
+</script>
